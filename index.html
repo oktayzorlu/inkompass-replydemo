@@ -563,7 +563,7 @@ flex: 1;
     		const marketPage = response.items[0].fields;
     		const bannerImage = document.getElementById('banner_web');
 			console.log(response);
-    		bannerImage.src = `https:${marketPage.fields.mainBanner.fields.bannerImage.fields.file.url}`;
+    		bannerImage.src = `https:${marketPage.mainBanner.fields.bannerImage.fields.file.url}`;
   			})
   			.catch(console.error);
   		</script>

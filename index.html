@@ -591,6 +591,9 @@ flex: 1;
             <p>${marketPage.mainBanner.fields.closingDate}</p>
 			`;
 			
+			const mainContentArea-heading = document.getElementById('mainContentArea-heading');
+			mainContentArea-heading.innerHTML=`${marketPage.mainBanner.fields.marketMainContent.fields.heading}`;
+			
   			})
   			.catch(console.error);
   		</script>
@@ -621,7 +624,7 @@ flex: 1;
         <img class="boxpartWEB" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/1044X846PMI-Section-img-Armenia.png" alt="Discover yourself with INKOMPASS">
         <img class="boxpartMOB" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/375x301_PMI-Section-img-Armenia.png" alt="Discover yourself with INKOMPASS">
         <div>
-            <h2>Discover yourself with INKOMPASS</h2>
+            <h2 id="mainContentArea-heading">Discover yourself with INKOMPASS</h2>
             <h3>INKOMPASS is a unique internship program at Philip Morris International (PMI) In Armenia that enables you to DISCOVER yourself through challenges and cultural diversity. With our paid internship in Armenia, you will be given the opportunity to:</h3>
             <ul>
                 <li>Work on REAL BUSINESS PROJECTS that will help you develop portable skills</li>

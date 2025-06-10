@@ -8,7 +8,17 @@
   <script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
   <script>
     const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
-    // Fetch and render entries
+    client.getEntries({ content_type: 'homepage', limit: 1 })
+  .then((response) => {
+    const homepage = response.items[0].fields;
+    const container = document.getElementById('homepage');
+    container.innerHTML = `
+      <h1>${homepage.title}</h1>
+      <p>${homepage.mainText}</p>
+      ${homepage.bannerImage ? `<img src="${homepage.bannerImage.fields.file.url}" alt="Banner">` : ''}
+    `;
+  })
+  .catch(console.error);
   </script>
 </head>
 <body>

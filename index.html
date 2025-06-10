@@ -11,9 +11,18 @@
     
   client.getEntries({ content_type: 'homepage', limit: 1 })
   .then((response) => {
-    println(response.items);
-
+    // Option 1: Log the entire response object
+    console.log(response);
+    
+    // Option 2: Pretty-print the items array
+    console.log('Contentful items:', response.items);
+    
+    // Option 3: Stringify for easier reading of all properties
+    console.log(JSON.stringify(response, null, 2));
   })
+  .catch(error => {
+    console.error('Error fetching entries:', error);
+  });
     
   </script>
 </head>

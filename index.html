@@ -556,7 +556,7 @@ flex: 1;
 <!-- banner start -->
 <section class="mainbanner applicaton">
 
-
+	    <script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
 	    <script>
     		const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
     		client.getEntries({ content_type: 'marketPage', limit: 1 }).then((response) => {

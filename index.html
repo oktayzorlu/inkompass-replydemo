@@ -1,5 +1,27 @@
-<script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
-<script>
-  const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
-  // Fetch and render entries
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkompass PMI – Careers</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
+  <script>
+    const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
+    // Fetch and render entries
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Inkompass PMI</h1>
+    <p>Join Our Team</p>
+  </header>
+  <main>
+    <div id="jobs" class="jobs-container"></div>
+  </main>
+  <footer>
+    <p>© 2024 Inkompass PMI. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

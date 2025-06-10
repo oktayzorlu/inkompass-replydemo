@@ -12,7 +12,6 @@
     const homepage = response.items[0].fields;
     const container = document.getElementById('homepage');
     container.innerHTML = `
-      <h1>Inkompass Careers</h1>
       <p>${homepage.introText}</p>
     `;
   })
@@ -20,6 +19,8 @@
   </script>
 </head>
 <body>
+  <h1>Inkompass Careers</h1>
+  <div id="homepage"></div>
   <footer>
     <p>© 2024 Inkompass PMI. All rights reserved.</p>
   </footer>

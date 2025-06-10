@@ -562,6 +562,7 @@ flex: 1;
     		client.getEntries({ content_type: 'marketPage', limit: 1 }).then((response) => {
     		const marketPage = response.items[0].fields;
     		const bannerImage = document.getElementById('banner_web');
+			console.log${(marketPage});
     		bannerImage.src = `${marketPage.mainBanner.url}`;
   			})
   			.catch(console.error);

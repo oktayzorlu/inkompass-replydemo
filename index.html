@@ -462,6 +462,7 @@ flex: 1;
     <main>
         <!-- header start -->
         <header class="header">
+  
             <div class="headercontainer">
                 <aside>
                     <a href="https://www.inkompass.global/"><img src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/logo.png" alt="logo"></a>
@@ -554,9 +555,21 @@ flex: 1;
 <p></p>
 <!-- banner start -->
 <section class="mainbanner applicaton">
+
+
+	    <script>
+    		const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
+    		client.getEntries({ content_type: 'marketPage', limit: 1 }).then((response) => {
+    		const marketPage = response.items[0].fields;
+    		const bannerImage = document.getElementById('banner_web');
+    		bannerImage.src = `marketPage.mainBanner.url`;
+  			})
+  			.catch(console.error);
+  		</script>
+  		
     <div class="bannersection">
-        <img class="banner_web" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/1920x300_PMI-Banner-img-Armenia.jpg" alt="applications">
-        <img class="banner_ipad" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/375x150_PMI_1-banner-img-for-ipad-Armenia.jpg" alt="applications">
+        <img id="banner_web" class="banner_web" src="" alt="applications">
+        <img  class="banner_ipad" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/375x150_PMI_1-banner-img-for-ipad-Armenia.jpg" alt="applications">
         <img class="banner_mobile" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/1104x300_PMI_1-banner-img-for-mob-Armenia.jpg" alt="applications">
         <div class="bannerinner">
             <ul class="breadcrumbs">

@@ -566,7 +566,7 @@ flex: 1;
     		bannerImage.src = `https:${marketPage.mainBanner.fields.bannerImage.fields.file.url}`;
 
 		const applicationsBlock = document.getElementById('applications-block');
-		applicationsBlock.innerHtml=`
+		applicationsBlock.innerHTML=`
 			<h2>${marketPage.mainBanner.fields.applicationState}</h2>
             		<p>${marketPage.mainBanner.fields.closingDate}</p>
 			`;

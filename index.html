@@ -564,8 +564,15 @@ flex: 1;
     		const bannerImage = document.getElementById('banner_web');
 			console.log(response);
     		bannerImage.src = `https:${marketPage.mainBanner.fields.bannerImage.fields.file.url}`;
-  			})
-  			.catch(console.error);
+
+		const applicationsBlock = document.getElementById('applications-block');
+		applicationsBlock.innerHtml=`
+			<h2>${marketPage.mainBanner.fields.applicationState}</h2>
+            		<p>${marketPage.mainBanner.fields.closingDate}</p>
+			`;
+			
+  		})
+  		.catch(console.error);
   		</script>
   		
     <div class="bannersection">
@@ -581,9 +588,8 @@ flex: 1;
                 <li>Armenia</li>
             </ul>
         </div>
-        <div class="applications-block">
-            <h2>Applications Open</h2>
-            <p>Closing on 20<sup>th</sup> May, 2025</p>
+        <div id="applications-block" class="applications-block">
+
         </div>
     </div>
 </section>

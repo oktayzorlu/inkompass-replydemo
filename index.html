@@ -13,25 +13,16 @@
     const homepage = response.items[0].fields;
     const container = document.getElementById('homepage');
     container.innerHTML = `
-      <h1>${homepage.title}</h1>
-      <p>${homepage.mainText}</p>
-      ${homepage.bannerImage ? `<img src="${homepage.bannerImage.fields.file.url}" alt="Banner">` : ''}
+      <h1>Inkompass Careers</h1>
+      <p>${homepage.introText}</p>
     `;
   })
   .catch(console.error);
   </script>
 </head>
 <body>
-  <header>
-    <h1>Inkompass PMI</h1>
-    <p>Join Our Team</p>
-  </header>
-  <main>
-    <div id="jobs" class="jobs-container"></div>
-  </main>
   <footer>
     <p>© 2024 Inkompass PMI. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>

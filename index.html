@@ -533,7 +533,7 @@ flex: 1;
     <!-- market navigation start -->
 <div class="market_navigation_wrap">
     <div class="market_navigation_container">
-        <div>
+        <div id="margket_nav_bar_CTF">
             <p id="margket_nav_bar">ARMENIA</p>
             <aside>
                 <img src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/armenia.png" alt="Armenia">
@@ -556,23 +556,43 @@ flex: 1;
 <!-- banner start -->
 <section class="mainbanner applicaton">
 
+
 	    <script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
 	    <script>
     		const client = contentful.createClient({ space: '569r52j3dn0b', accessToken: 'EIHPewH-61me87rMuPBund35t0TQqrqqDT_Lrnt9dj8' });
     		client.getEntries({ content_type: 'marketPage', limit: 1 }).then((response) => {
     		const marketPage = response.items[0].fields;
+    		console.log(response);
+    		
+    		const countryName = document.getElementById('margket_nav_bar_CTF');
+    		countryName.innerHTML = `
+    		<p id="margket_nav_bar">${marketPage.countryName}</p>
+            <aside>
+                <img src="${marketPage.countryFlag.fields.file.url}" alt="${marketPage.countryName}">
+            </aside>
+            `;
+            
+            const breadcrumbs = document.getElementById('breadcrumbs');
+    		breadcrumbs.innerHTML = `
+            <li><a href="https://www.inkompass.global/">Home</a></li>
+            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+            <li><a href="https://www.inkompass.global/explore-opportunities">Explore Opportunities</a></li>
+            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+            <li>${marketPage.countryName}</li>
+    		`;
+
+
     		const bannerImage = document.getElementById('banner_web');
-			console.log(response);
     		bannerImage.src = `https:${marketPage.mainBanner.fields.bannerImage.fields.file.url}`;
 
-		const applicationsBlock = document.getElementById('applications-block');
-		applicationsBlock.innerHTML=`
+			const applicationsBlock = document.getElementById('applications-block');
+			applicationsBlock.innerHTML=`
 			<h2>${marketPage.mainBanner.fields.applicationState}</h2>
-            		<p>${marketPage.mainBanner.fields.closingDate}</p>
+            <p>${marketPage.mainBanner.fields.closingDate}</p>
 			`;
 			
-  		})
-  		.catch(console.error);
+  			})
+  			.catch(console.error);
   		</script>
   		
     <div class="bannersection">
@@ -580,7 +600,7 @@ flex: 1;
         <img  class="banner_ipad" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/375x150_PMI_1-banner-img-for-ipad-Armenia.jpg" alt="applications">
         <img class="banner_mobile" src="./Internship Program in Armenia _ Paid Internship for College Students _ INKOMPASS_files/1104x300_PMI_1-banner-img-for-mob-Armenia.jpg" alt="applications">
         <div class="bannerinner">
-            <ul class="breadcrumbs">
+            <ul id="breadcrumbs" class="breadcrumbs">
                 <li><a href="https://www.inkompass.global/">Home</a></li>
                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                 <li><a href="https://www.inkompass.global/explore-opportunities">Explore Opportunities</a></li>
